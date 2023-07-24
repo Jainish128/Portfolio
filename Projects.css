@@ -1,0 +1,417 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    caret-color: #0ef;
+}
+
+:root
+{
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+
+html
+{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body
+{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* ->->->| For Scrollbar -> START |<-<-<- */
+::-webkit-scrollbar
+{
+    width: 12px;
+}
+::-webkit-scrollbar-thumb
+{
+    background: linear-gradient(transparent, #0ef);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover
+{
+    background: linear-gradient(#0ef,#0ef);
+    border-radius: 10px;
+}
+/* ->->->| For Scrollbar -> END |<-<-<- */
+
+
+
+/* ->->->| Header -> START |<-<-<- */
+.header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.header.sticky
+{
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+    /* border-bottom: 0.1rem solid cyan; */
+}
+
+.logo
+{
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: default;
+}
+
+.navbar a
+{
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+}
+.navbar a:hover,
+.navbar a.active  
+{
+    color: var(--main-color);
+}
+
+#menu-icon
+{
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+
+/* ->->->| Header -> END |<-<-<- */
+
+
+
+
+
+
+
+
+
+
+
+/* ->->->| Portfolio -> START |<-<-<-  */
+.portfolio
+{
+    background: var(--bg-color);
+    width: 82%;
+    margin: 6% 9% 1% 9%;
+}
+
+.portfolio h2
+{
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    font-size: 4rem;
+    text-align: center;
+    border-top: 2px solid var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+    /* border-left: 1px solid var(--main-color); */
+    /* border-right: 1px solid var(--main-color); */
+    /* border-radius: 10px; */
+}
+.portfolio h2 span
+{
+    color: var(--main-color);
+}
+
+
+.portfolio-container
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.portfolio-container .portfolio-box
+{
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--bg-color);
+    overflow: hidden;
+    display: flex;
+}
+.portfolio-box img
+{
+    width: 100%;
+    height: 250px;
+    filter: brightness(75%);
+    transition: 0.5s ease;
+} 
+.portfolio-box:hover img
+{
+    transform: scale(1.1);
+}
+
+.portfolio-box .portfolio-layer
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.1), var(--main-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 5rem;
+    transform: translateY(100%);
+    transition: 0.5s ease;
+}
+.portfolio-box:hover .portfolio-layer
+{
+    transform: translateY(0);
+}
+
+.portfolio-layer h4
+{
+    font-size: 3rem;
+}
+.portfolio-layer p
+{
+    font-size: 1.6rem;
+    margin: 0.3rem 0 1rem;
+}
+.portfolio-layer a
+{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--text-color);
+    border-radius: 50%;
+}
+
+.portfolio-layer a i
+{
+    font-size: 2rem;
+    color: var(--second-bg-color);
+}
+
+
+/* ->->->| Portfolio -> END |<-<-<-  */ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* BREAKPOINTS */
+@media (max-width: 1200px) 
+{
+    html
+    {
+        font-size: 55%;
+    }
+}
+
+
+
+
+
+@media (max-width: 991px) 
+{
+    .header
+    {
+        padding: 2rem 5%;
+    }    
+    section
+    {
+        padding: 10rem 3% 2rem;
+    }
+    .portfolio
+    {
+        padding-bottom: 7rem;   
+    }
+    .portfolio {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        background: var(--bg-color);
+    }
+    .portfolio-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portfolio-box img {
+        height: 230px;
+    }
+    .portfolio h2 {
+        margin-bottom: 4rem;
+     
+    }
+}
+
+
+
+
+
+@media (max-width: 768px) 
+{
+
+    /* .navbar
+    {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+        display: block;
+    } */
+    /* .navbar.active
+    {
+        display: block;
+    } */
+
+    .navbar a
+    {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+    .portfolio h2
+    {
+        margin-bottom: 4rem;
+    }
+    .portfolio-container
+    {
+        grid-template-columns: repeat(1, 1fr); 
+    }
+    .portfolio-box img {
+        width: 100%;
+        height: 275px;
+    }
+    
+
+
+}
+
+
+
+
+
+@media (max-width: 617px) 
+{
+    .portfolio-container
+    {
+        grid-template-columns: 1fr;
+    }    
+    /* #btn
+    {
+        width: 50%;
+    }
+    .contact form .input-box input
+    {
+        width: 100%;
+    } */
+
+    .portfolio-box img {
+        width: 100%;
+        height: 250px;
+    }
+    .portfolio-layer h4
+    {
+        font-size: 2.5rem;
+    }
+    /* .view-more-projects
+    {
+        margin-left: 39%;
+        margin-top: 4%;
+    } */
+    
+}
+
+
+
+
+
+@media (max-width: 450px) 
+{
+    html
+    {
+        font-size: 50%;
+    }
+    .portfolio-box img {
+        width: 100%;
+        height: 225px;
+    }
+    /* .contact form .input-box input
+    {
+        width: 100%;
+    }
+    .footer
+    {
+        flex-direction: column-reverse;
+    }
+    .footer p
+    {
+        margin-top: 2rem;
+    }
+    .view-more-projects
+    {
+        margin-left: 37%;
+        margin-top: 5%;
+    } */
+}
+
+
+
+/* @media (max-width: 365px) 
+{
+    .home-img img
+    {
+        width: 90vw;
+    }
+    .about-img img 
+    {
+        width: 90vw;
+    }
+    .view-more-projects
+    {
+        margin-left: 33%;
+        margin-top: 5%;
+    }
+}  */
+
+
